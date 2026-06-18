@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Community Discussions
+    url: https://github.com/atanaxinc/axions360/discussions
+    about: Questions, ideas, and general discussion about Axions360
+  - name: Security Vulnerability
+    url: mailto:security@atanax.com
+    about: Report a security vulnerability privately (do NOT use public issues)
+  - name: Commercial Inquiry
+    url: mailto:hello@atanax.com
+    about: Questions about commercial services, hosting, or partnerships

@@ -1,0 +1,20 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^https://atanax.com"
+    },
+    {
+      "pattern": "^https://axions360.com"
+    },
+    {
+      "pattern": "^https://docs.axions360.com"
+    },
+    {
+      "pattern": "^mailto:"
+    }
+  ],
+  "retryOn429": true,
+  "retryCount": 3,
+  "timeout": "20s",
+  "aliveStatusCodes": [200, 206]
+}
