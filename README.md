@@ -39,14 +39,17 @@ A restaurant owner starts with Synchro POS today. Three years later, when they o
 These are architectural guarantees built into every layer of the system — not features to be added later.
 
 ### Multi-Tenant by Design
+
 One platform. Unlimited organizations. Complete data isolation enforced at every layer — application scope, query filters, and database Row Level Security.
 
 ### Multi-Language by Design
+
 Languages are data, not files. Every label, status, document, notification, permission, and business term is stored in the database with its translations. No framework language files. No hardcoded strings.
 
 Supports unlimited languages through database-driven translations.
 
 ### Multi-Currency by Design
+
 Transactions, accounting, and reporting support multiple currencies natively. The financial engine distinguishes between:
 
 - **Transaction currency** — the currency of the operation
@@ -57,6 +60,7 @@ Transactions, accounting, and reporting support multiple currencies natively. Th
 All monetary amounts are stored as integers in minor units. No floating point. No rounding errors.
 
 ### Multi-Accounting Framework
+
 Accounting rules are not hardcoded. The financial engine is decoupled from the chart of accounts, tax rules, and compliance requirements.
 
 An Accounting Framework in Axions360 is a complete, swappable rule set:
@@ -77,14 +81,17 @@ Designed to support: **SYSCOHADA · SYSCOA · IFRS · PCG · CPA Canada · Custo
 The same financial engine, the same transaction table, the same tenant — different accounting frameworks, without touching the core.
 
 ### Multi-Country by Design
+
 A single tenant can operate across multiple countries simultaneously. Country-specific rules — tax, compliance, currency, accounting framework — are resolved dynamically per store and per organization, not per deployment.
 
 ### Offline-First
+
 Internet is optional. Business continuity is mandatory.
 
 Synchro runs entirely on a local network. POS terminals, kitchen displays, inventory — everything works without internet. A Sync Engine handles conflict resolution when connectivity is available, with business-logic-aware merge rules.
 
 ### Payment Provider Agnostic
+
 Axions360 does not depend on a specific payment provider. The platform integrates with any payment infrastructure through a unified abstraction layer:
 
 - Mobile Money providers
@@ -135,18 +142,18 @@ ATANAX
 
 ## How Axions360 Compares
 
-| Capability | Axions360 | ERPNext | Odoo |
-|------------|-----------|---------|------|
-| Offline POS | ✅ Native | ⚠️ Partial | ⚠️ Partial |
-| Multi-Accounting Framework | ✅ Designed for it | ⚠️ Single chart | ⚠️ Limited |
-| Mobile Money ready | ✅ Abstraction layer | ❌ | ❌ |
-| OHADA / SYSCOHADA | ✅ | ❌ | ❌ |
-| Database-native i18n architecture | ✅ | ⚠️ | ⚠️ |
-| Multi-currency (4 roles) | ✅ | ⚠️ | ⚠️ |
-| Activation instead of migration | ✅ | ❌ | ❌ |
-| Open core | ✅ | ✅ | ⚠️ Community only |
-| Built for Africa | ✅ | ⚠️ Generic | ⚠️ Generic |
-| Framework-agnostic architectural contracts | ✅ | ❌ | ❌ |
+| Capability                                 | Axions360            |
+| ------------------------------------------ | -------------------- | 
+| Offline POS                                | ✅ Native            | 
+| Multi-Accounting Framework                 | ✅ Designed for it   |
+| Mobile Money ready                         | ✅ Abstraction layer |
+| OHADA / SYSCOHADA                          | ✅                   | 
+| Database-native i18n architecture          | ✅                   | 
+| Multi-currency (4 roles)                   | ✅                   | 
+| Activation instead of migration            | ✅                   | 
+| Open core                                  | ✅                   | 
+| Built for Africa                           | ✅                   | 
+| Framework-agnostic architectural contracts | ✅                   | 
 
 ---
 
@@ -154,16 +161,16 @@ ATANAX
 
 The software is free. Revenue comes from what surrounds it.
 
-| Free forever | Paid (cloud & services) |
-|--------------|------------------------|
-| All Synchro modules | Cloud synchronization |
-| Multi-user, multi-store local | Multi-site dashboards |
-| Full offline operation | Automated backups |
-| Standard reports | Advanced analytics |
-| Community support | Consolidated group reporting |
-| | Notification channels (SMS, WhatsApp, Email) |
-| | API access |
-| | Priority support |
+| Free forever                  | Paid (cloud & services)                      |
+| ----------------------------- | -------------------------------------------- |
+| All Synchro modules           | Cloud synchronization                        |
+| Multi-user, multi-store local | Multi-site dashboards                        |
+| Full offline operation        | Automated backups                            |
+| Standard reports              | Advanced analytics                           |
+| Community support             | Consolidated group reporting                 |
+|                               | Notification channels (SMS, WhatsApp, Email) |
+|                               | API access                                   |
+|                               | Priority support                             |
 
 ---
 
@@ -177,35 +184,36 @@ Transactional consistency for the ERP core. Simple local deployment for Synchro 
 
 ### Stack
 
-| Layer | Technology |
-|-------|-----------|
-| Core API | PHP 8.3+ (Laravel-based) |
-| Web App | React 19 · TypeScript · Vite |
-| Desktop (POS / KDS) | C++ · Tauri |
-| Mobile | React Native · Capacitor |
-| Database | PostgreSQL 16 |
-| Cache / Queues | Redis |
-| Analytics | ClickHouse |
-| Cryptography | Rust |
-| AI / Scoring | Python · FastAPI |
-| Sites | Astro |
+| Layer               | Technology                   |
+| ------------------- | ---------------------------- |
+| Core API            | PHP 8.3+ (Laravel-based)     |
+| Web App             | React 19 · TypeScript · Vite |
+| Desktop (POS / KDS) | C++ · Tauri                  |
+| Mobile              | React Native · Capacitor     |
+| Database            | PostgreSQL 16                |
+| Cache / Queues      | Redis                        |
+| Analytics           | ClickHouse                   |
+| Cryptography        | Rust                         |
+| AI / Scoring        | Python · FastAPI             |
+| Sites               | Astro                        |
 
 ### Architectural Contracts
 
-| Contract | Purpose |
-|----------|---------|
-| **Entity Contract V1** | Versioned structural standard for every entity table |
-| **Entity Registry** | Architectural rules declared in the database — not in framework code |
-| **Opscodes** | Universal operational language linking events, audit, notifications, and translations |
-| **Operation Codes** | Financial impact catalogue (DEBIT / CREDIT / NEUTRAL) |
+| Contract                 | Purpose                                                                                |
+| ------------------------ | -------------------------------------------------------------------------------------- |
+| **Entity Contract V1**   | Versioned structural standard for every entity table                                   |
+| **Entity Registry**      | Architectural rules declared in the database — not in framework code                   |
+| **Opscodes**             | Universal operational language linking events, audit, notifications, and translations  |
+| **Operation Codes**      | Financial impact catalogue (DEBIT / CREDIT / NEUTRAL)                                  |
 | **Accounting Framework** | Complete accounting rule-set abstraction — chart of accounts, fiscal rules, compliance |
-| **Lookup Tables** | Zero hardcoded ENUMs — all statuses and types are extensible database tables with i18n |
+| **Lookup Tables**        | Zero hardcoded ENUMs — all statuses and types are extensible database tables with i18n |
 
 ---
 
 ## Roadmap
 
-### Phase 1 — Kernel *(in progress)*
+### Phase 1 — Kernel _(in progress)_
+
 - [x] Architecture contracts
 - [x] Entity Contract V1
 - [ ] Axions Kernel — core schema
@@ -216,17 +224,20 @@ Transactional consistency for the ERP core. Simple local deployment for Synchro 
 - [ ] Multi-language foundation
 
 ### Phase 2 — Synchro Restaurant
+
 - [ ] POS · KDS · Menus · Tables · Inventory
 - [ ] Local network sync
 - [ ] Offline conflict resolution
 
 ### Phase 3 — Axions ERP Core
+
 - [ ] Axions Finance — SYSCOHADA first
 - [ ] Axions HR
 - [ ] Axions CRM
 - [ ] Multi-site reporting
 
 ### Phase 4 — Scale
+
 - [ ] Synchro Hotel · Synchro Commerce
 - [ ] Additional accounting frameworks
 - [ ] Multi-country deployment
@@ -238,11 +249,11 @@ Transactional consistency for the ERP core. Simple local deployment for Synchro 
 
 Axions360 is built on contracts, not conventions. Before contributing, read the three architecture documents:
 
-| Document | Purpose |
-|----------|---------|
+| Document                 | Purpose                                                |
+| ------------------------ | ------------------------------------------------------ |
 | `ATANAX_ARCHITECTURE.md` | System design, stack decisions, evaluated technologies |
-| `AXIONS_KERNEL.md` | Core schema, entity contracts, module rules |
-| `AXIONS_SCHEMA_RULES.md` | Data conventions, i18n, opscodes, migrations |
+| `AXIONS_KERNEL.md`       | Core schema, entity contracts, module rules            |
+| `AXIONS_SCHEMA_RULES.md` | Data conventions, i18n, opscodes, migrations           |
 
 **Rules every contributor must follow:**
 
@@ -255,6 +266,7 @@ Axions360 is built on contracts, not conventions. Before contributing, read the 
 - `audit_logs` and `domain_events` are append-only — no UPDATE, no DELETE
 
 **We will not merge code that:**
+
 - Introduces a hardcoded ENUM in a schema
 - Bypasses tenant isolation
 - Uses `DECIMAL` or `FLOAT` for monetary values
